@@ -16,6 +16,7 @@ const TaskList = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const tasksPerPage = 5;
 
+  // Load tasks from local storage on component mount
   useEffect(() => {
     const storedTasks = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (storedTasks) {
@@ -23,10 +24,9 @@ const TaskList = () => {
     }
   }, []);
 
+  // Save tasks to local storage whenever they change
   useEffect(() => {
-    if (tasks.length > 0) {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
-    }
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
   }, [tasks]);
 
   const addTask = (task) => {
@@ -44,6 +44,7 @@ const TaskList = () => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
+  // Handle sorting
   const handleSort = (column) => {
     if (sortColumn === column) {
       setSortDirection(sortDirection === "asc" ? "desc" : "asc");
@@ -53,17 +54,20 @@ const TaskList = () => {
     }
   };
 
+  // Sort tasks
   const sortedTasks = [...tasks].sort((a, b) => {
     if (a[sortColumn] < b[sortColumn]) return sortDirection === "asc" ? -1 : 1;
     if (a[sortColumn] > b[sortColumn]) return sortDirection === "asc" ? 1 : -1;
     return 0;
   });
 
+  // Filter tasks
   const filteredTasks =
     filterStatus === "All"
       ? sortedTasks
       : sortedTasks.filter((task) => task.status === filterStatus);
 
+  // Pagination
   const indexOfLastTask = (currentPage + 1) * tasksPerPage;
   const indexOfFirstTask = indexOfLastTask - tasksPerPage;
   const currentTasks = filteredTasks.slice(indexOfFirstTask, indexOfLastTask);
@@ -78,6 +82,7 @@ const TaskList = () => {
         onAddTask={addTask}
         onEditTask={editTask}
         editingTask={editingTask}
+        className="task-form"
       />
       <div className="filters">
         <select
@@ -133,9 +138,8 @@ const TaskList = () => {
         onPageChange={handlePageChange}
         containerClassName="pagination"
         activeClassName="active"
-        previousLabel={"Previous"}
-        nextLabel={"Next"}
-        disabledClassName="disabled"
+        previousLabel={"< Previous"}
+        nextLabel={"Next >"}
       />
     </div>
   );
