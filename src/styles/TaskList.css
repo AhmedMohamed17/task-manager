@@ -1,93 +1,102 @@
-.task-list {
-    padding: 20px;
-    overflow-x: auto;
-  }
-  
-  .filters {
-    margin-bottom: 20px;
-  }
-  
-  .filters select,
-  .filters button {
-    margin-right: 10px;
-    padding: 5px;
-  }
-  
-  .task-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .task-table th,
-  .task-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .task-table th {
-    background-color: #f4f4f4;
-  }
-  
-  .task-item:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .task-description {
-    max-width: 300px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  
-  .task-status {
-    display: inline-block;
-    padding: 2px 5px;
-    border-radius: 3px;
-    color: white;
-  }
-  
-  .task-actions button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 3px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .task-actions button:hover {
-    background-color: #0056b3;
-  }
-  
-  .task-actions button:focus {
-    outline: none;
-  }
-  
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .pagination .active {
-    font-weight: bold;
-    color: #007bff;
-  }
-  
-  .pagination a {
-    margin: 0 5px;
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #007bff;
-  }
-  
-  .pagination a:hover {
-    background-color: #f4f4f4;
-  }
-  
+/* Table Styling */
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.task-table th, .task-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-table th {
+  background-color: #007bff;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.task-table tr {
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.task-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.task-table td:last-child {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Button Styling inside Table */
+.task-table .task-item-button {
+  padding: 5px 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.task-table .task-item-button:hover {
+  background-color: #0056b3;
+}
+
+/* Pagination Styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  list-style: none;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination li a {
+  display: block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  color: #007bff;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination li a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination li.active a {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination li.disabled a {
+  color: #ddd;
+}
+
+.pagination li a:focus {
+  outline: none;
+}
+
+.pagination .previous a,
+.pagination .next a {
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+  .pagination{
+    list-style-type: none;  }

@@ -126,14 +126,16 @@ const TaskList = () => {
         </tbody>
       </table>
       <ReactPaginate
+        className="pagination"
         pageCount={Math.ceil(filteredTasks.length / tasksPerPage)}
         pageRangeDisplayed={5}
         marginPagesDisplayed={2}
         onPageChange={handlePageChange}
         containerClassName="pagination"
         activeClassName="active"
-        previousLabel={"< Previous"}
-        nextLabel={"Next >"}
+        previousLabel={"Previous"}
+        nextLabel={"Next"}
+        disabledClassName="disabled"
       />
     </div>
   );
