@@ -1,0 +1,24 @@
+.task-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(50% - 10px);
+    box-sizing: border-box;
+  }
+  
+  .task-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .task-status {
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: white;
+  }
+  
+  .task-actions button {
+    margin-left: 5px;
+  }
+  
