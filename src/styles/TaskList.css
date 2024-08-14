@@ -17,9 +17,7 @@
 .task-form input[type="text"],
 .task-form select,
 .task-form button {
-  width: 100%;
   padding: 10px;
-  margin: 10px 0;
   font-size: 1rem;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -96,12 +94,14 @@
 /* Select and Option Styling */
 .filters select {
   padding: 10px;
+  margin-right: 2px;
   font-size: 1rem;
   border-radius: 5px;
   border: 1px solid #ddd;
   background-color: #f9f9f9;
   color: #333;
   cursor: pointer;
+  background-color: #007bff;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
